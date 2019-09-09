@@ -1,0 +1,93 @@
+//game objects
+
+class Game {
+    constructor() {
+        this.players = []
+        this.currentPlayer = this.players[0]
+        this.winningPositions = {
+            0: [
+                [0, 0],
+                [1, 1],
+                [2, 2]
+            ],
+            1: [
+                [0, 0],
+                [0, 1],
+                [0, 2]
+            ]
+        }
+
+    }
+
+    shiftPlayers() {
+        this.currentPlayer = (this.currentPlayer === this.players[0]) ? this.players[1] : this.players[0]
+    }
+    reset() {
+        this.players.map(x => {
+            x.score = 0
+        })
+    }
+    checkWinner() {
+        let winner = {}
+        this.players.forEach(player => {
+            //[0,0],[1,1],[2,2]
+            //game jitne condition
+            winner = player
+        })
+    }
+    getCurrentTurn() {
+
+    }
+
+}
+class GameUI {
+    constructor() {
+        this.buttons = [...document.getElementsByClassName("btn-lg")]
+
+        document.getElementById("reset").addEventListener("click", () => {
+            this.reset()
+        })
+    }
+    load() {
+        this.buttons.forEach(element => {
+            element.innerHTML = ''
+            element.addEventListener("click", function () {
+                element.innerHTML = game.currentPlayer.sign
+                //shiftPlayers
+                game.currentPlayer = (game.currentPlayer === sizan) ? rajan : sizan
+                let clickedMatrix = element.id.toString().split("")
+                game.currentPlayer.onTap(clickedMatrix)
+                console.log(game.currentPlayer.name)
+                console.log(game.currentPlayer.positions)
+            })
+        });
+    }
+
+    reset() {
+        this.buttons.forEach(element => {
+            element.innerHTML = ''
+        })
+    }
+}
+
+class Player {
+    constructor(name, sign) {
+        this.name = name
+        this.sign = sign
+        this.score = 0
+        this.positions = []
+    }
+    onTap(position) {
+        this.positions.sort().push(position)
+    }
+}
+
+
+let game = new Game()
+let gameUI = new GameUI()
+let rajan = new Player("Rajan", "X")
+let sizan = new Player("Sizan", "O")
+
+
+game.currentPlayer = rajan
+gameUI.load()

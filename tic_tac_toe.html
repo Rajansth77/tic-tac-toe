@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="tic_tac_toe.css">
+</head>
+
+<body>
+    <!-- Title -->
+    <div class="title text-dark bg-info py-1">
+        <h3 class="text-center"><strong>The Great</strong><br><strong>Tic-Tac-Toe</strong></h3>
+    </div>
+
+    <!-- Score Board -->
+    <div class="container-fluid bg-warning ">
+        <div class="row text-center">
+            <div class="col-4 text-dark">
+                <h5 class="mt-2">Player X : <span id="pxDisplay">0</span></h5>
+            </div>
+            <div class="col-4">
+                <button onclick="startGame()" class="btn btn-danger shadow btn-sm my-1" id="reset">Restart</button>
+            </div>
+            <div class="col-4 text-dark">
+                <h5 class="mt-2">Player O : <span id="poDisplay">0</span></h5>
+            </div>
+        </div>
+    </div>
+
+    <!-- The real deal -->
+    <div class="container-fluid meat bg-dark">
+        <p class="text-light">Turn : <span id="turn">Player X</span></p>
+        <div class="row justify-content-center">
+            <div>
+                <button class="btn btn-lg text-light border border-top-0 border-left-0 rounded-0 p-4 cell" id="0">
+                </button>
+            </div>
+            <div>
+                <button class="btn btn-lg text-light border border-top-0 rounded-0 p-4 cell" id="1">
+                </button>
+            </div>
+            <div>
+                <button class="btn btn-lg text-light border border-top-0 border-right-0 rounded-0 p-4 cell" id="2">
+                </button>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div>
+                <button class="btn btn-lg text-light border rounded-0 p-4 border-left-0 cell" id="3">
+                </button>
+            </div>
+            <div>
+                <button class="btn btn-lg text-light border rounded-0 p-4 cell" id="4">
+                </button>
+            </div>
+            <div>
+                <button class="btn btn-lg text-light border rounded-0 p-4 border-right-0 cell" id="5">
+                </button>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div>
+                <button class="btn btn-lg text-light border rounded-0 p-4 border-left-0 border-bottom-0 cell"
+                    id="6">
+                </button>
+            </div>
+            <div>
+                <button class="btn btn-lg text-light border rounded-0 p-4 border-bottom-0 cell" id="7">
+                </button>
+            </div>
+            <div>
+                <button class="btn btn-lg text-light border rounded-0 p-4 border-right-0 border-bottom-0 cell"
+                    id="8">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="endgame">
+        <div class="text">
+
+        </div>
+    </div>
+
+    <script src="tic_tac_toe.js"></script>
+
+</body>
+
+</html>
